@@ -3,22 +3,22 @@
 #include<GLFW/glfw3.h> // This includes the GLFW library, which is used for creating windows
 
 
-int main() 
+int main() // Creates and sets as main function
 {
 	glfwInit(); // creates window
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // GL needs to know which version it's using
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // This ensures that the window will use OpenGL version 3.x (major version 3).
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // This ensures that the window will use OpenGL version 3.3 (minor version 3).
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // GL needs to know which profile to use
 
-	GLFWwindow* window = glfwCreateWindow(800, 800, "Vitual4DSpace", NULL, NULL); // creates the pop up window
+	GLFWwindow* window = glfwCreateWindow(800, 800, "Vitual4DSpace"/*is name of window!*/, NULL, NULL); // creates the pop up window
 	if (window == NULL) // fail safe net
 	{
 		std::cout << "Failed to create GL Window" << std::endl;
-		glfwTerminate();
+		glfwTerminate(); // closes/terminates window
 		return -1;
 	}
-	glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent(window); // takes the "window" we made with GLFWwindow and sets its OpenGL context as the current one for the calling thread
 
 
 	gladLoadGL(); // This loads all the OpenGL function pointers using the GLAD loader
@@ -38,6 +38,6 @@ int main()
 
 
 	glfwDestroyWindow(window); // This destroys the specified window and its context, freeing up the resources used by the window.
-	glfwTerminate(); // closes/terminates window
+	glfwTerminate(); 
 	return 0;
 }
