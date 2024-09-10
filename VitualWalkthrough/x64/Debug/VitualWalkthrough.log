@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+C:\Users\The Hooder\Desktop\4DConcept\VitualWalkthrough\Main.cpp(35,31): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+C:\Users\The Hooder\Desktop\4DConcept\VitualWalkthrough\Main.cpp(35,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
   VitualWalkthrough.vcxproj -> C:\Users\The Hooder\Desktop\4DConcept\VitualWalkthrough\x64\Debug\VitualWalkthrough.exe

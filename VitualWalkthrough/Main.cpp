@@ -29,9 +29,11 @@ int main() // Creates and sets as main function
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // GL needs to know which profile to use
 
 
-	GLfloat vertices[] =
+	GLfloat vertices[] = // An array that will concist of the vertex position points, GLfloat like any float is flaoting point numbers (aka perfect for position points)
 	{
-		-0.5f, -0.5f * float(sqrt(3))
+		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+		0.5f, -0.5 * float(sqrt(3)) / 3, 0.0f,
+		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
 	};
 
 
