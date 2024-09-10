@@ -1,0 +1,9 @@
+[     const char* vertexShaderSource = "#version 330 core\n"
+
+Explanation: Specifies the GLSL version (OpenGL Shading Language) that you're using. 330 core means GLSL version 3.3, which works with OpenGL 3.3.   ]
+
+
+[ "layout (location = 0) in vec3 aPos;\n" 
+
+Explanation: This line defines an input variable called aPos of type vec3 (a vector with 3 components: x, y, z).
+ The layout (location = 0) part tells OpenGL that this variable is coming from the first position in the vertex buffer (like telling the shader where to get the vertex data).    ]

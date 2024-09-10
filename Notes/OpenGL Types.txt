@@ -1,0 +1,51 @@
+OpenGL has a number of pre-defined types that should be available to various bindings. These are useful for ensuring cross-platform portability, since all platforms will use well-defined sizes for the parameters.
+
+This table shows the C names for the types, as well as their bitdepth. OpenGL requires that these types have the exact bitdepth defined below. This also describes them and provides an enum for some of them. Many APIs, such as the pixel transfer and vertex format definition APIs, take enums that specify one of these types.
+
+C Type	Bitdepth	Description	Common Enum
+
+GLboolean	1+	A boolean value, either GL_TRUE or GL_FALSE	
+
+GLbyte	8	Signed, 2's complement binary integer	GL_BYTE
+
+GLubyte	8	Unsigned binary integer	GL_UNSIGNED_BYTE
+
+GLshort	16	Signed, 2's complement binary integer	GL_SHORT
+
+GLushort	16	Unsigned binary integer	GL_UNSIGNED_SHORT
+
+GLint	32	Signed, 2's complement binary integer	GL_INT
+
+GLuint	32	Unsigned binary integer	GL_UNSIGNED_INT
+
+GLfixed	32	Signed, 2's complement 16.16 integer	GL_FIXED
+
+GLint64	64	Signed, 2's complement binary integer	
+
+GLuint64	64	Unsigned binary integer	
+
+GLsizei	32	A non-negative binary integer, for sizes.	
+
+GLenum	32	An OpenGL enumerator value	
+
+GLintptr	ptrbits​1	Signed, 2's complement binary integer	
+
+GLsizeiptr	ptrbits​1	Non-negative binary integer size, for memory offsets and ranges	
+
+GLsync	ptrbits​1	Sync Object handle	
+
+GLbitfield	32	A bitfield value	
+
+GLhalf	16	An IEEE-754 floating-point value	GL_HALF_FLOAT
+
+GLfloat	32	An IEEE-754 floating-point value	GL_FLOAT
+
+GLclampf	32	An IEEE-754 floating-point value, clamped to the range [0,1]	
+
+GLdouble	64	An IEEE-754 floating-point value	GL_DOUBLE
+
+GLclampd	64	An IEEE-754 floating-point value, clamped to the range [0,1]	
+
+
+1: ptrbits​ is the bitdepth of a CPU pointer address. Therefore, these types must be large enough to store a pointer: sizeof(void*).
+Some of these types have the same internal representation as others. For example, a GLsizei is functionally equivalent to GLuint. However, the typename conveys a semantic meaning: GLsizei is used specifically for sizes of things. Similarly, GLclampf is just a GLfloat as far as C/C++ is concerned. However, when GLclampf appears in as a function argument, this means that the function will clamp this parameter to the [0,1] range. As a return type, it means the value won't exceed that range.

@@ -3,6 +3,23 @@
 #include<GLFW/glfw3.h> // This includes the GLFW library, which is used for creating windows
 
 
+// copied source code (TEMP)
+const char* vertexShaderSource = "#version 330 core\n"
+"layout (location = 0) in vec3 aPos;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0";
+
+const char* fragmentShaderSource = "#version 330 core\n"
+"out vec4 FragColor;\n"
+"void main()\n"
+"{\n"
+"   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
+"}\n\0";
+
+
+
 int main() // Creates and sets as main function
 {
 	glfwInit(); // creates window
@@ -10,6 +27,13 @@ int main() // Creates and sets as main function
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // This ensures that the window will use OpenGL version 3.x (major version 3).
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); // This ensures that the window will use OpenGL version 3.3 (minor version 3).
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // GL needs to know which profile to use
+
+
+	GLfloat vertices[] =
+	{
+		-0.5f, -0.5f * float(sqrt(3))
+	};
+
 
 	GLFWwindow* window = glfwCreateWindow(800, 800, "Vitual4DSpace"/*is name of window!*/, NULL, NULL); // creates the pop up window
 	if (window == NULL) // fail safe net

@@ -1,0 +1,13 @@
+
+A vertex shader is a small program that processes each vertex of a 3D model. 
+It transforms the vertex position from 3D space into screen space by applying transformations like scaling, rotation, and projection.
+
+Key Points:
+
+Input: Receives vertex position and other attributes.
+
+Processing: Transforms the position using matrices (model, view, projection).
+
+Output: Outputs the final position (gl_Position) to be drawn on the screen.
+
+It's essential for rendering objects and defining their appearance in a 3D space.
