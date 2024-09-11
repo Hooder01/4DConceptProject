@@ -51,7 +51,15 @@ int main() // Creates and sets as main function
 
 	glViewport(0, 0, 800, 800); // Area of which part of the window will render! (this should be the same as "createwindow")
 
-	glClearColor(0.224f, 0.224f, 0.224f, 0.0f); // Color RGB values
+
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER); // creates a new "Shader Vertex" object then stores it within an ID (this is part of the pipeline) FIX THIS COMMENT!
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL); // using vertexShader from before is now assinged the source code (we didn't have that before I guess) "1" is just the first set of an array in said source code, then the vertex shadersource is being pointed to the actaul source code (hence the name)
+	glCompileShader(vertexShader); // Compiles the shader I made (cooking it for the PC if you will)
+
+
+
+
+	glClearColor(0.224f, 0.224f, 0.224f, 0.0f); // Color RGB values (aka this sets the color)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glfwSwapBuffers(window); // This swaps the front and back buffers of the specified window
 
