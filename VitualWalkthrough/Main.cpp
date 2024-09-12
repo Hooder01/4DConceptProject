@@ -56,7 +56,17 @@ int main() // Creates and sets as main function
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL); // using vertexShader from before is now assinged the source code (we didn't have that before I guess) "1" is just the first set of an array in said source code, then the vertex shadersource is being pointed to the actaul source code (hence the name)
 	glCompileShader(vertexShader); // Compiles the shader I made (cooking it for the PC if you will)
 
+	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+	glCompileShader(fragmentShader);
 
+	GLuint shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+
+	glLinkProgram(shaderProgram); // final wrap
+
+	// PUTTING PROJECT ON HOLD!
 
 
 	glClearColor(0.224f, 0.224f, 0.224f, 0.0f); // Color RGB values (aka this sets the color)
